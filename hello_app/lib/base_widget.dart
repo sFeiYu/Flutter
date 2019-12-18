@@ -22,7 +22,6 @@ class TextDemo extends StatelessWidget {
 }
 
 class RichTextDemo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return RichText(
@@ -53,11 +52,25 @@ class RichTextDemo extends StatelessWidget {
   }
 }
 
-
-
 class BaseWidgetDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.yellow,
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right: 10,top: 10,left: 10),
+            padding: EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 10),
+            color: Colors.red,
+            child: Icon(Icons.add),
+          ),
+          Container(
+
+          ),
+          Container(),
+        ],
+      ),
+    );
   }
 }
