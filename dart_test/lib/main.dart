@@ -69,19 +69,119 @@ class MyApp extends StatelessWidget {
 //  }
 //}
 
+//class HomeContent extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//
+//    return Padding(
+//      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+//      child: GridView.count(
+//        crossAxisCount: 2,
+//        childAspectRatio: 1.7,
+//        children: <Widget>[
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/1.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/2.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/3.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/4.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/5.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/6.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//          Padding(
+//            padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+//            child: Image.network(
+//              'https://www.itying.com/images/flutter/7.png',
+//              fit: BoxFit.cover,
+//            ),
+//          ),
+//
+//        ],
+//      ),
+//    );
+//  }
+//}
 
 
-class HomeContent extends StatelessWidget{
+class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return GridView.count(
-        crossAxisCount: 2,
+
+    return  Container(
+      height: 600,
+      width: 600,
+      color: Colors.yellow,
+      child: Column( //Row
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,//y/x轴方向(用的比较少)
         children: <Widget>[
-          Image.network('')
+          IconContainer(Icons.search,color: Colors.blue,),
+          IconContainer(Icons.home,color: Colors.orange,),
+          IconContainer(Icons.select_all,color: Colors.red,),
         ],
+      ),
     );
   }
-  
 
+}
+
+
+class IconContainer extends StatelessWidget{
+
+  double size = 32;
+  Color color = Colors.red;
+  IconData icon;
+
+  IconContainer(this.icon,{this.size, this.color}){
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 100,
+      width: 100,
+      color: this.color,
+      child: Center(
+        child: Icon(this.icon, size: this.size, color: Colors.white,),
+      ),
+    );
+  }
 }
